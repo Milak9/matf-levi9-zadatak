@@ -1,8 +1,8 @@
 import express from "express"
 import { Connection } from "typeorm";
-import {Results} from "../entities/Results";
+import {Product} from "../entities/Product";
 
-export class ResultsController {
+export class ProductsController {
     connection: Connection;
 
     constructor(conn: Connection) {
@@ -11,32 +11,31 @@ export class ResultsController {
 
     static registerRoutes(app: express.Application, conn: Connection) {
         app.get("/results", (request, response) => {
-            new ResultsController(conn).getResults(request, response);
+            new ProductsController(conn).getResults(request, response);
         });
 
         app.get("/results/:id", (request, response) => {
-            new ResultsController(conn).getResult(request.params.id, response);
+            new ProductsController(conn).getResult(request.params.id, response);
         });
 
         app.post("/results", (request, response) => {
-            new ResultsController(conn).store(request, response);
+            new ProductsController(conn).store(request, response);
         });
 
         // app.put("/results/:id", (request, response) => {
-        //     new ResultsController(conn).updateOne(request, response);
+        //     new ProductsController(conn).updateOne(request, response);
         // });
 
         // app.delete("/results/:id", (request, response) => {
-        //     new ResultsController(conn).deleteOne(request, response);
+        //     new ProductsController(conn).deleteOne(request, response);
         // });
     }
 
     // Fja cuva u bazi
     async store(req: express.Request, res: express.Response) {
-        const result = new Results();
-        result.firstName = req.body.firstName;
-        result.lastName = req.body.lastName;
-        result.score = req.body.score;
+        const result = new Product();
+        result.name = req.body.name;
+        result.description = req.body.description;
 
         await this.connection.mongoManager.save(result);
         
@@ -44,12 +43,12 @@ export class ResultsController {
     }    
 
     async getResults(request: express.Request, response: express.Response) {
-        const results = await this.connection.mongoManager.find(Results);
+        const results = await this.connection.mongoManager.find(Product);
         response.send(results)
     }
 
     async getResult(id: string, response: express.Response) {
-        const result = await this.connection.mongoManager.findOne(Results, id);
+        const result = await this.connection.mongoManager.findOne(Product, id);
         response.send(result)
     }
 }

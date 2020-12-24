@@ -1,6 +1,6 @@
 import express from "express";
 import * as bodyParser from "body-parser";
-import { ResultsController } from "./controllers/ResultsController";
+import { ProductsController } from "./controllers/ProductsController";
 import { createConnection } from "typeorm";
 
 class App {
@@ -14,7 +14,7 @@ class App {
 
      public async start() {
         const connection = await createConnection();
-        ResultsController.registerRoutes(this.app, connection);
+        ProductsController.registerRoutes(this.app, connection);
 
          this.app.listen(8080, () => {
              console.log("App listening on port http://localhost:8080");

@@ -1,5 +1,6 @@
 import express from "express";
 import * as bodyParser from "body-parser";
+import cors from "cors";
 import { ProductsController } from "./controllers/ProductsController";
 import { createConnection } from "typeorm";
 
@@ -10,6 +11,7 @@ class App {
         this.app = express();
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
+        this.app.use(cors());
     }
 
      public async start() {

@@ -10,15 +10,15 @@ export class ProductsController {
     }
 
     static registerRoutes(app: express.Application, conn: Connection) {
-        app.get("/results", (request, response) => {
+        app.get("/admin/proizvodi", (request, response) => {
             new ProductsController(conn).getResults(request, response);
         });
 
-        app.get("/results/:id", (request, response) => {
+        app.get("/admin/proizvodi/:id", (request, response) => {
             new ProductsController(conn).getResult(request.params.id, response);
         });
 
-        app.post("/results", (request, response) => {
+        app.post("/admin/unos-novog-proizvoda", (request, response) => {
             new ProductsController(conn).store(request, response);
         });
 
@@ -36,6 +36,7 @@ export class ProductsController {
         const result = new Product();
         result.name = req.body.name;
         result.description = req.body.description;
+        result.price = req.body.price;
 
         await this.connection.mongoManager.save(result);
         

@@ -28,8 +28,4 @@ function Admin() {
 return <h2>Admin</h2>;
 }
 
-function Nesto() {
-return <h2>Users</h2>;
-}
-
 export default App

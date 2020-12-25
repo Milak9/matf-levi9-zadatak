@@ -1,0 +1,26 @@
+.link {
+    text-decoration: none;
+    margin-top: 30px;
+    height: 40px;
+    display: flex;
+    content: "\2022";
+    color: white;
+}
+
+.link:hover {
+    color: darkgray;
+}
+
+
+.div {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 0px 40px;
+    font-size: 20px;
+    width: 300px;
+}
+
+ul {
+    list-style: none;
+}

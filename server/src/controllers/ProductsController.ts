@@ -26,9 +26,9 @@ export class ProductsController {
         //     new ProductsController(conn).updateOne(request, response);
         // });
 
-        // app.delete("/results/:id", (request, response) => {
-        //     new ProductsController(conn).deleteOne(request, response);
-        // });
+        app.delete("/admin/proizvodi/:id", (request, response) => {
+            new ProductsController(conn).deleteOne(request.params.id, response);
+        });
     }
 
     // Fja cuva u bazi
@@ -52,6 +52,10 @@ export class ProductsController {
         const result = await this.connection.mongoManager.findOne(Product, id);
         response.send(result)
     }
-}
 
+    async deleteOne(id: string, response: express.Response) {
+        const result = await this.connection.mongoManager.delete(Product, id);
+        response.send(result);
+    }
+}
 // Kada neko ode na rutu POST:/results - vracam string/objekat

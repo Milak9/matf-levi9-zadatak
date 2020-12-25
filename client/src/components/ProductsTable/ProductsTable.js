@@ -1,6 +1,7 @@
 import React from "react";
 
 import productsApi from "../../api/productsApi";
+import ProductItem from "../ProductItem/ProductItem";
 
 class ProductsTable extends React.Component {
     state = {
@@ -16,8 +17,22 @@ class ProductsTable extends React.Component {
     }
 
     renderTable = () => {
-        return <div>{this.state.products.map(product => <h1>{product.name}</h1>
-        )}</div>;
+        //return <div>{this.state.products.map(product => <h1>{product.name}</h1>
+        //)}</div>;
+        return (
+            <div>
+                <table>
+                    {this.state.products.map(product => (
+                        <ProductItem 
+                            key={product.id}
+                            product={product}
+                            deleteProduct={this.deleteProduct}
+                        />
+                    ))}
+
+                </table>
+            </div>
+        );
     }
 
     renderLoader = () => <div>No entries yet...</div>;

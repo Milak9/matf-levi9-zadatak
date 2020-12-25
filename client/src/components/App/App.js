@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from "../NavBar/NavBar";
 import CreateNewProduct from "../CreateNewProduct/CreateNewProduct";
 import ProductsTable from "../ProductsTable/ProductsTable";
+import Admin from "../Admin/Admin";
 
 const App = () => {
     return (
@@ -22,10 +23,6 @@ const App = () => {
 
 function Home() {
 return <h2>Home</h2>;
-}
-
-function Admin() {
-return <h2>Admin</h2>;
 }
 
 export default App

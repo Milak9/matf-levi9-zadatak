@@ -40,7 +40,7 @@ export class ProductsController {
 
         await this.connection.mongoManager.save(result);
         
-        res.status(201).send("snimljeno!");
+        res.status(201).send("Saved!");
     }    
 
     async getResults(request: express.Request, response: express.Response) {
@@ -58,4 +58,3 @@ export class ProductsController {
         response.send(result);
     }
 }
-// Kada neko ode na rutu POST:/results - vracam string/objekat

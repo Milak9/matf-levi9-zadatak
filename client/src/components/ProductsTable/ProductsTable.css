@@ -1,0 +1,16 @@
+.theader {
+    font-size: 20px;
+    text-align: center;
+}
+
+.table {
+    margin: 50px auto;
+    text-align: left;
+    font-size: 15px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px 50px 5px 10px;
+    text-align: center;
+}

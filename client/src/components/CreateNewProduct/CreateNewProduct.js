@@ -15,8 +15,8 @@ class CreateNewProduct extends React.Component {
         return (
             <div className="new-product">
                 <h2> Add new product</h2>
-                <form onSubmit={this.onFormSubmit} className="form">
-                    <div className="field">
+                <form onSubmit={this.onFormSubmit}>
+                    <div>
                         <label>Name:</label>
                         <input
                             name="name"
@@ -26,7 +26,7 @@ class CreateNewProduct extends React.Component {
                             placeholder="Name of the product"
                         />
                     </div>
-                    <div className="field">
+                    <div>
                         <label>Description:</label>
                         <textarea
                             name="description"
@@ -35,7 +35,7 @@ class CreateNewProduct extends React.Component {
                             placeholder="Description of the product"
                         />
                     </div>
-                    <div className="field">
+                    <div>
                         <label>Price:</label>
                         <input
                             name="price"
@@ -45,7 +45,7 @@ class CreateNewProduct extends React.Component {
                             placeholder="Price of the product"
                         />
                     </div>
-                    <button className="ui button" type="submit">
+                    <button className="btn_create" type="submit">
                         Create
                     </button>
                 </form>

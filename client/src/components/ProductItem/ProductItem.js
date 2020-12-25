@@ -1,23 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./ProductItem.css"
+
 const ProductItem = props => (
-    <tr>
+    <tr className="row">
         <td>
             {props.product.name}
         </td>
+        
         <td>
             {props.product.description}
         </td>
+
         <td>
             {props.product.price}
         </td>
+
         <td>
-            <button
+            <button className="btn_delete"
                 onClick={() => props.deleteProduct(props.product.id)}>
                     Delete
             </button>
         </td>
+
     </tr>
 );
 

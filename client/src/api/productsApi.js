@@ -23,7 +23,7 @@ class ProductsApi {
     getProduct(id) {
         return this.httpClient
             .get(`/admin/proizvodi/${id}`)
-            .then(reponse => this._mapResponseToProduct(reponse.data));
+            .then(response => this._mapResponseToProduct(response.data));
     }
 
     createProduct(product) {
@@ -42,12 +42,12 @@ class ProductsApi {
         return this.httpClient.delete(`/admin/proizvodi/${id}`);
     }
 
-    _mapResponseToProduct(reponse) {
+    _mapResponseToProduct(response) {
         return {
-            id: reponse._id,
-            name: reponse.name,
-            description: reponse.description,
-            price: reponse.price
+            id: response.id,
+            name: response.name,
+            description: response.description,
+            price: response.price
         };
     }
 }

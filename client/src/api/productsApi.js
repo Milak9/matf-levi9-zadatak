@@ -13,6 +13,13 @@ class ProductsApi {
         });
     }
 
+    getItems() {
+        return this.httpClient
+            .get("/")
+            .then(response =>
+                response.data.map(item => this._mapResponseToProduct(item)));
+    }
+
     getProducts() {
         return this.httpClient
             .get("/admin/proizvodi")

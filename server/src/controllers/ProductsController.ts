@@ -22,12 +22,16 @@ export class ProductsController {
             new ProductsController(conn).store(request, response);
         });
 
-        // app.put("/results/:id", (request, response) => {
-        //     new ProductsController(conn).updateOne(request, response);
-        // });
-
         app.delete("/admin/proizvodi/:id", (request, response) => {
             new ProductsController(conn).deleteOne(request.params.id, response);
+        });
+
+        app.get("/", (request, response) => {
+            new ProductsController(conn).getResults(request, response);
+        });
+
+        app.get("/:id", (request, response) => {
+            new ProductsController(conn).getResult(request.params.id, response);
         });
     }
 

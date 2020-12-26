@@ -44,7 +44,7 @@ class ProductsTable extends React.Component {
         );
     }
 
-    renderLoader = () => <div>No entries yet...</div>;
+    renderLoader = () => <div>No products yet...</div>;
 
     fetchProducts() {
         productsApi.getProducts()

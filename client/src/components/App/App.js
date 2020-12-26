@@ -1,10 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
+
 import NavBar from "../NavBar/NavBar";
 import CreateNewProduct from "../CreateNewProduct/CreateNewProduct";
 import ProductsTable from "../ProductsTable/ProductsTable";
 import Admin from "../Admin/Admin";
+import Home from "../Home/Home";
 
 const App = () => {
     return (
@@ -19,10 +21,6 @@ const App = () => {
             </Switch>
         </div>
         );
-}
-
-function Home() {
-return <h2>Home</h2>;
 }
 
 export default App

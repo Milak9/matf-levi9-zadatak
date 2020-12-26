@@ -19,6 +19,12 @@ class ProductsApi {
             .then(response =>
                 response.data.map(item => this._mapResponseToProduct(item)));
     }
+    
+    getHomeItem(id) {
+        return this.httpClient
+            .get(`/${id}`)
+            .then(response => this._mapResponseToProduct(response.data));
+    }
 
     getProducts() {
         return this.httpClient

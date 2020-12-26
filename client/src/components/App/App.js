@@ -7,6 +7,7 @@ import CreateNewProduct from "../CreateNewProduct/CreateNewProduct";
 import ProductsTable from "../ProductsTable/ProductsTable";
 import Admin from "../Admin/Admin";
 import Home from "../Home/Home";
+import Product from "../Product/Product"
 
 const App = () => {
     return (
@@ -17,7 +18,8 @@ const App = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/admin" component={Admin} />
                 <Route exact path="/admin/unos-novog-proizvoda" component={CreateNewProduct} />
-                <Route path="/admin/proizvodi" component={ProductsTable} />
+                <Route exact path="/admin/proizvodi" component={ProductsTable} />
+                <Route path="/:id" component={Product} />
             </Switch>
         </div>
         );

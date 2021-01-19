@@ -13,7 +13,7 @@ const ProductItem = props => (
         </td>
 
         <td>
-            {props.product.price}
+            {props.product.price} €
         </td>
 
         <td>

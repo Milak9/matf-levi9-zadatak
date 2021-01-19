@@ -6,9 +6,9 @@ import "./HomeItem.css";
 const HomeItem = props => (
     <Link to={`/${props.product.id}`} className="link_item">
         <div className="home_item">
-            <p>{props.product.name}</p>
+            <p className="product_name">{props.product.name}</p>
             <p>{props.product.description}</p>
-            <p>{props.product.price}</p>
+            <p>{props.product.price} € </p>
         </div>
     </Link>
 );

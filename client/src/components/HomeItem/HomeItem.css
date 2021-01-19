@@ -15,3 +15,7 @@
 .link_item:hover {
     color: darkgray;
 }
+
+.product_name {
+    font-weight: bolder;
+}
